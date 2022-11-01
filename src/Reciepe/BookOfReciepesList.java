@@ -6,7 +6,7 @@ import java.util.Set;
 public class BookOfReciepesList {
 
     Set<Recipe> bookset = new HashSet<>();
-    public void addProduct(Recipe recipe) {
+    public void addReciepe(Recipe recipe) {
         if (!bookset.add(recipe)) {
             throw new RuntimeException("Receipt already add");
         }

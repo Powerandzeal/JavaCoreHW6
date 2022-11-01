@@ -1,3 +1,4 @@
+import Ex2and2.Number;
 import Product.Product;
 import Reciepe.BookOfReciepesList;
 import Reciepe.Recipe;
@@ -30,11 +31,14 @@ public class Main {
         solanka.addProduct(cabbage);
         System.out.println(solanka);
 
-
         BookOfReciepesList book = new BookOfReciepesList();
+        book.addReciepe(solanka);
 
+        Number numbers = new Number();
+        numbers.createNumber();
+        System.out.println("---------------------------------");
+        numbers.removeOddValues();
 
-        book.addProduct(solanka);
 
 
     }
