@@ -32,7 +32,7 @@ public class Number {
                 iter.remove();
             }
         }
-//        System.out.println(numbers);
+        System.out.println(numbers);
 
 //        List<Integer> tmp = numbers.stream().filter(i -> i % 2 == 0).toList();
 //        System.out.println(numbers);
