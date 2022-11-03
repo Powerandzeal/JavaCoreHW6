@@ -1,8 +1,14 @@
 import Ex2and2.Number;
+import ListOfExercise.ListOfExercise;
+import Passport.Passport;
+import Passport.PassportList;
 import Product.Product;
 import Reciepe.BookOfReciepesList;
 import Reciepe.Recipe;
 import Product.ProductList;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -39,6 +45,33 @@ public class Main {
         System.out.println("---------------------------------");
         numbers.removeOddValues();
 
+        ListOfExercise listOfExercise = new ListOfExercise();
+
+        listOfExercise.createExercise();
+
+        System.out.println();
+
+        listOfExercise.createExercise1();
+
+
+        Set<Passport>passports = new HashSet<>();
+
+        Passport p1 = new Passport(1224442,"Sergey","Panin",
+                "Igorevich", "1999");
+
+        Passport p2 = new Passport(2232432,"Oleg","Nicheporenko",
+                "ivanovic","1838");
+
+        Passport p3 =new Passport(1254512,"Petrov","Ivan",
+                "Ivanovich","1878");
+
+        PassportList passportList = new PassportList();
+
+        passportList.addPassport(p2);
+        passportList.addPassport(p1);
+        passportList.addPassport(p3);
+
+        passportList.searchPassport(2232432);
 
 
     }
