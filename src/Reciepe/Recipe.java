@@ -2,15 +2,19 @@ package Reciepe;
 
 import Product.Product;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
+import Product.ProductList;
+
 
 public class Recipe {
 
     private String nameOfReciepe;
     private int sumCostOfRecipes;
 
-    private final Set<Product> products = new HashSet<>();
+    private final Map<Product,Integer> products = new HashMap<Product, Integer>();
 
     public Recipe(String nameOfReciepe) {
         this.nameOfReciepe = nameOfReciepe;
@@ -18,13 +22,13 @@ public class Recipe {
         System.out.println("Создаем новый рецепт "+ nameOfReciepe);
 
     }
-    public void addProduct (Product product) throws RuntimeException {
+    public void addProduct (Product product, int quanity) throws RuntimeException {
 
-        if (products.contains(product)) {
+        if (products.containsKey(product)) {
             throw new RuntimeException("Продукт уже добавлен");
         }
-        products.add(product);
-        sumCostOfRecipes = sumCostOfRecipes + product.getCost();
+        products.put(product,quanity);
+        sumCostOfRecipes = (sumCostOfRecipes + product.getCost())*quanity  ;
     }
 
 

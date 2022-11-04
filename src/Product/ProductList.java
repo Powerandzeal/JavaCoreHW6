@@ -1,18 +1,17 @@
 package Product;
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
+
 
 public class ProductList {
-    public Set<Product> setOfProducts = new HashSet<>();
+    public Set<Product> setOfProducts = new HashSet<Product>();
 
 
     public void addProduct(Product newProducts) {
-        if (!setOfProducts.add(newProducts)) {
-            throw new RuntimeException("Product already add");
-        }
 
+        if (!setOfProducts.contains(newProducts)){
+            setOfProducts.add(newProducts);
+        } else  throw new RuntimeException("Product already add");
     }
 
 //    public void createProduct(String name, int price, int weight) {
@@ -34,6 +33,7 @@ public class ProductList {
         return setOfProducts;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -54,8 +54,8 @@ public class ProductList {
                 '}';
     }
 
-    public void removeObject(String name) {
-        setOfProducts.removeIf(g -> g.getName().equals(name));
-        System.out.println("Удалаяем из списка "+ name);
-    }
+//    public void removeObject(String name) {
+//        setOfProducts.removeIf(g -> g.getName().equals(name));
+//        System.out.println("Удалаяем из списка "+ name);
+//    }
 }

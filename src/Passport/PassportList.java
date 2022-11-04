@@ -31,9 +31,6 @@ public class PassportList {
 
     }
 
-    public void printPassport() {
-        System.out.println();
-    }
 
     @Override
     public String toString() {
