@@ -8,13 +8,14 @@ import Product.Product;
 import Reciepe.BookOfReciepesList;
 import Reciepe.Recipe;
 import Product.ProductList;
+import org.w3c.dom.ls.LSOutput;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
+
+    private static final  Map<String, List<Integer>>mapFrom =new HashMap<>();
+    private static final  Map<String,Integer>mapTo =new HashMap<>();
     public static void main(String[] args) {
 
         Number numbers = new Number();
@@ -126,7 +127,60 @@ public class Main {
         values.addKeyAndValues("Panin Sergey", 22242);
         System.out.println(values);
         //Exercise 4 -------------------------------------
-        Hw2Ex1 listForNubmer = new Hw2Ex1();
+//        Hw2Ex1 listForNubmer = new Hw2Ex1();
+
+
+
+        Random random =new Random();
+
+        List<Integer> list1 = new ArrayList<>(List.of(2, 6, 3));
+        for (int i = 0; i < 15; i++) {
+            list1.add( random.nextInt(10));
+        }
+
+        List<Integer> list2 = new ArrayList<>(List.of(2, 6, 3));
+        for (int i = 0; i < 15; i++) {
+            list2.add( random.nextInt(10));
+        }
+        List<Integer> list3 = new ArrayList<>(List.of(2, 6, 3));
+        for (int i = 0; i < 15; i++) {
+            list3.add( random.nextInt(10));
+        }
+
+        mapFrom.put("List 1 ",list1 );
+        mapFrom.put("List 2 ",list2 );
+        mapFrom.put("List 3 ",list3 );
+
+        System.out.println(mapFrom);
+
+        for (var keyset : mapFrom.keySet()) {
+            Integer sum = 0;
+            List<Integer> templist = mapFrom.get(keyset);
+            for (Integer integerSum: templist) {
+                sum += integerSum;
+            }
+            mapTo.put(keyset,sum);
+        }
+        System.out.println(mapTo);
+        //Exercise 5-----------------------------------------------------------------------
+        Map<Integer,String> mapa5 = new LinkedHashMap<>();
+
+        mapa5.put(11,"eleventh");
+        mapa5.put(1,"First");
+        mapa5.put(2,"Second");
+        mapa5.put(3,"Third");
+        mapa5.put(4,"fourth");
+        mapa5.put(5,"fifth");
+        mapa5.put(6,"sixth");
+        mapa5.put(7,"seventh");
+        mapa5.put(8,"eighth");
+        mapa5.put(9,"ninth");
+        mapa5.put(10,"tenth");
+
+        System.out.println(mapa5);
+
+
+
 
 
 

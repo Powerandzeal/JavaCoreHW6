@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class ArbitraryValues {
 
-    Map<String, Integer> values = new HashMap<>();
+   public Map<String, Integer> values = new HashMap<>();
 
 
     public void addKeyAndValues(String key, Integer value) {
