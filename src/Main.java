@@ -19,9 +19,9 @@ public class Main {
     public static void main(String[] args) {
 
         Number numbers = new Number();
-        //numbers.createNumber();
+        numbers.createNumber();
         System.out.println("---------------------------------");
-       // numbers.removeOddValues();
+       //numbers.removeOddValues();
 
         //ListOfExercise listOfExercise = new ListOfExercise();
 
@@ -40,14 +40,17 @@ public class Main {
 
         Passport p3 =new Passport(1254512,"Petrov","Ivan",
                 "Ivanovich","1878");
+        Passport p4 = new Passport(212411,"Fokin","Ilya","Petrovich",
+                "1999");
 
         PassportList passportList = new PassportList();
+        passportList.listOfPassport.put(12,p4);
 
-        passportList.addPassport(p2);
-        passportList.addPassport(p1);
-        passportList.addPassport(p3);
+        passportList.addPassport(1,p4);
+        passportList.addPassport(2,p1);
+        passportList.addPassport(3,p3);
 
-        passportList.searchPassport(2232432);
+       // passportList.searchPassport(2232432);
 // Maps новое дз "Урок про мапы  задание 1.1"
 
         System.out.println("--------------------------------------");

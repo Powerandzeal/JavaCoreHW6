@@ -1,24 +1,22 @@
 package Ex2and2;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Number {
 
     private int num1 = 0;
     private int num2 = 20;
 
-    List<Integer> numbers = new ArrayList<>();
 
 
+    Set<Integer> numbers = new HashSet<>();
 
 
     public void createNumber() {
         for (int i = 0; i < 20; i++) {
-            numbers.add(num1 + (int) (Math.random() * num2));
-            System.out.println("Создаем случайное число " + numbers.get(i));
+            int random = num1 + (int) (Math.random() * num2);
+            numbers.add(random);
+            System.out.println("Создаем случайное число " + random);
         }
     }
 
@@ -28,19 +26,22 @@ public class Number {
         while (iter.hasNext()) {
             Integer n = iter.next();
             if (n % 2 == 1) {
-                System.out.println("Удаляем нечетное число "+ n);
+                System.out.println("Удаляем нечетное число " + n);
                 iter.remove();
             }
         }
         System.out.println(numbers);
-
 //        List<Integer> tmp = numbers.stream().filter(i -> i % 2 == 0).toList();
 //        System.out.println(numbers);
 //        System.out.println(tmp);
-            }
-        }
+    }
 
-
+//    public void createNumber() {
+//        for (int i = 0; i < 20; i++) {
+//            numbers.add(num1 + (int) (Math.random() * num2));
+//            System.out.println("Создаем случайное число " + numbers.get(i));
+//        }
+}
 
 
 

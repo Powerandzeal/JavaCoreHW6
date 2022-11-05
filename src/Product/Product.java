@@ -9,7 +9,7 @@ public class Product {
     private final int weight;
 
     public Product(String name, int cost, int weight) {
-        if (name != null && !name.isBlank()&&!name.isEmpty()&&cost>0) {
+        if (name != null && !name.isBlank() && !name.isEmpty() && cost > 0) {
             this.name = name;
             this.cost = cost;
             this.weight = weight;
@@ -27,13 +27,12 @@ public class Product {
     }
 
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return  Objects.equals(name, product.name);
+        return Objects.equals(name, product.name);
     }
 
     @Override
@@ -45,8 +44,8 @@ public class Product {
     public String toString() {
         return
                 "Наименование='" + name + '\'' +
-                ", Цена=" + cost +
-                ", Вес=" + weight +
-                '}'+ "\n";
+                        ", Цена=" + cost +
+                        ", Вес=" + weight +
+                        '}' + "\n";
     }
 }
